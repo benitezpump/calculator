@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="js/angular.min.js"></script>
+    <script src="js/jquery-1.11.3.js"></script>
+    <link rel="stylesheet" href="css/metro.css"/>
+    <link href="css/metro-icons.css" rel="stylesheet">
+    <script src="js/metro.js"></script>
+    <script src="js/app.js"></script>
+    <link rel="stylesheet" href="css/custom.css"/>
+</head>
+<body ng-app="calculator">
+
+
+<div class="container" ng-controller="CalculatorCtrl as Ctrl">
+    <br/>
+
+    <table >
+        <tr>
+            <td colspan="4">
+                <input type="text" ng-model="Ctrl.model" id="calc" disabled/>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button class="tile-small bg-red fg-white" data-role="tile" style="border: none" ng-dblclick="Ctrl.cleanMemory()" ng-click="Ctrl.clearCache()">AC</button>
+            </td>
+            <td>
+                <button class="tile-small bg-red fg-white" data-role="tile" style="border: none" ng-click="Ctrl.deleteLast()">CE</button>
+            </td>
+            <td>
+                <button class="tile-small bg-yellow fg-white" data-role="tile" style="border: none">%</button>
+            </td>
+            <td>
+                <button class="tile-small bg-yellow fg-white" data-role="tile" style="border: none" ng-click="Ctrl.actions('div')">÷</button>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button class="tile-small bg-black fg-white" data-role="tile" style="border: none" ng-click="Ctrl.n(7)">7</button>
+            </td>
+            <td>
+                <button class="tile-small bg-black fg-white" data-role="tile" style="border: none" ng-click="Ctrl.n(8)">8</button>
+            </td>
+            <td>
+                <button class="tile-small bg-black fg-white" data-role="tile" style="border: none" ng-click="Ctrl.n(9)">9</button>
+            </td>
+            <td>
+                <button class="tile-small bg-yellow fg-white" data-role="tile" style="border: none" ng-click="Ctrl.actions('mul')">x</button>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button class="tile-small bg-black fg-white" data-role="tile" style="border: none" ng-click="Ctrl.n(4)">4</button>
+            </td>
+            <td>
+                <button class="tile-small bg-black fg-white" data-role="tile" style="border: none" ng-click="Ctrl.n(5)">5</button>
+            </td>
+            <td>
+                <button class="tile-small bg-black fg-white" data-role="tile" style="border: none" ng-click="Ctrl.n(6)">6</button>
+            </td>
+            <td>
+                <button class="tile-small bg-yellow fg-white" data-role="tile" style="border: none" ng-click="Ctrl.actions('res')">-</button>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button class="tile-small bg-black fg-white" data-role="tile" style="border: none" ng-click="Ctrl.n(1)">1</button>
+            </td>
+            <td>
+                <button class="tile-small bg-black fg-white" data-role="tile" style="border: none" ng-click="Ctrl.n(2)">2</button>
+            </td>
+            <td>
+                <button class="tile-small bg-black fg-white" data-role="tile" style="border: none" ng-click="Ctrl.n(3)">3</button>
+            </td>
+            <td rowspan="2">
+                <button class="tile-small bg-yellow fg-white" data-role="tile" style="border: none; height: 150px;" ng-click="Ctrl.actions('sum')">+</button>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button class="tile-small bg-black fg-white" data-role="tile" style="border: none" ng-click="Ctrl.n(0)">0</button>
+            </td>
+            <td>
+                <button class="tile-small bg-black fg-white" data-role="tile" style="border: none" ng-click="Ctrl.p('.')">.</button>
+            </td>
+            <td>
+                <button class="tile-small bg-yellow fg-white" data-role="tile" style="border: none" ng-click="Ctrl.resultado()">=</button>
+            </td>
+        </tr>
+    </table>
+
+    <div class="tile bg-orange fg-white" data-role="tile" ng-click="Ctrl.memoryReload()">
+        <div class="tile-content iconic">
+            <span class="icon mif-sd-card"></span>
+            <span class="tile-label">Memory: {{Ctrl.storage}}</span>
+        </div>
+    </div>
+</div>
+
+
+</body>
+</html>
