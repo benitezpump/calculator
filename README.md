@@ -8,6 +8,6 @@
    boton de memoria al introducir nuevos numeros y presionar igual , se remplazara el valor de la memoria por el valor introducido.
    
  - boton CE: para borrar el ultimo digito de el numero introducido
-
+ - boton de memoria : restaura la cantidad marcada en la calculadora
 
 
